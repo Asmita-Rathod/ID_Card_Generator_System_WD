@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeModal = document.getElementById("closeModal");
     const loginForm = document.getElementById("loginForm");
     const forgotForm = document.getElementById("forgotForm");
+    const registerForm = document.getElementById("registerForm"); // <-- added
 
     if (forgotPasswordLink) {
         forgotPasswordLink.addEventListener("click", (e) => {
@@ -34,6 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.addEventListener("submit", (e) => {
             e.preventDefault();
             alert("Login Successful! Redirecting...");
+            window.location.href = "user-dashboard.html";
+        });
+    }
+
+    /* ------------------- */
+    /* Register Form Submit */
+    /* ------------------- */
+    if (registerForm) {
+        registerForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("Registration Successful! Redirecting...");
             window.location.href = "user-dashboard.html";
         });
     }
