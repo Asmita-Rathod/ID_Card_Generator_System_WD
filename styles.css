@@ -424,3 +424,121 @@ input:focus {
     margin: auto;
 }
 
+/* ------------------- */
+/* New ID Request Form */
+/* ------------------- */
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.form-card {
+    background: #252940;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 700px; /* wider than auth forms */
+}
+
+.form-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(90deg, #8a63ff, #4c7cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #b0b2c3;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3d415b;
+    border-radius: 8px;
+    background: #2d3142;
+    color: #e0e2e8;
+    font-size: 0.95rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8a63ff;
+    box-shadow: 0 0 8px rgba(138, 99, 255, 0.4);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* File input */
+.form-group input[type="file"] {
+    padding: 6px;
+    background: #1c1f33;
+    border: 1px dashed #4c7cff;
+    cursor: pointer;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #8a63ff;
+}
+
+/* Submit button */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #4c7cff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #365acb;
+}
+
+.btn-approve {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-approve:hover {
+    background: #43a047;
+}
+
+.btn-reject {
+    background: #E53935;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-reject:hover {
+    background: #c62828;
+}

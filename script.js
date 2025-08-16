@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeModal = document.getElementById("closeModal");
     const loginForm = document.getElementById("loginForm");
     const forgotForm = document.getElementById("forgotForm");
-    const registerForm = document.getElementById("registerForm"); // <-- added
+    const registerForm = document.getElementById("registerForm");
+    const fresherIdForm = document.getElementById("fresherIdForm"); // <-- added here
 
     if (forgotPasswordLink) {
         forgotPasswordLink.addEventListener("click", (e) => {
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         registerForm.addEventListener("submit", (e) => {
             e.preventDefault();
             alert("Registration Successful! Redirecting...");
-            window.location.href = "user-dashboard.html";
+            window.location.href = "index.html";
         });
     }
 
@@ -70,61 +71,40 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "index.html";
         });
     });
-});
 
-// Auto-fill fields from profile (example using localStorage)
-document.addEventListener("DOMContentLoaded", function () {
-    const profileData = JSON.parse(localStorage.getItem("profileData"));
-
-    if (profileData) {
-        document.getElementById("firstName").value = profileData.firstName || "";
-        document.getElementById("middleName").value = profileData.middleName || "";
-        document.getElementById("lastName").value = profileData.lastName || "";
-        document.getElementById("email").value = profileData.email || "";
-        document.getElementById("mobile").value = profileData.mobile || "";
-        document.getElementById("dob").value = profileData.dob || "";
-        document.getElementById("bloodGroup").value = profileData.bloodGroup || "";
-        document.getElementById("designation").value = profileData.designation || "";
-        document.getElementById("enrollment").value = profileData.enrollment || "";
-        document.getElementById("department").value = profileData.department || "";
-        document.getElementById("joinDate").value = profileData.joinDate || "";
+    /* ------------------- */
+    /* Fresher ID Form Submit */
+    /* ------------------- */
+    if (fresherIdForm) {
+        fresherIdForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Your fresher ID request has been submitted successfully!");
+            window.location.href = "my-id-history.html"; // redirect after submit
+        });
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const profileData = JSON.parse(localStorage.getItem("profileData"));
 
-    if (profileData) {
-        // Front side
-        document.getElementById("previewName").textContent =
-            `${profileData.firstName || ""} ${profileData.middleName || ""} ${profileData.lastName || ""}`;
-        document.getElementById("previewDesignation").textContent = profileData.designation || "";
-        document.getElementById("previewEnrollment").textContent = profileData.enrollment || "";
-        if (profileData.photo) {
-            document.getElementById("previewPhoto").src = profileData.photo;
-        }
+// Load student requests from localStorage
+const requestsTable = document.getElementById("requestsTable");
 
-        // Back side
-        document.getElementById("previewDOB").textContent = profileData.dob || "";
-        document.getElementById("previewBlood").textContent = profileData.bloodGroup || "";
-        document.getElementById("previewEmail").textContent = profileData.email || "";
-        document.getElementById("previewMobile").textContent = profileData.mobile || "";
-    }
-});
+if (requestsTable) {
+    const tbody = requestsTable.querySelector("tbody");
+    const requests = JSON.parse(localStorage.getItem("idRequests")) || [];
 
-// Generate PDF from ID Preview
-function generatePDF() {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
+    tbody.innerHTML = "";
 
-    const preview = document.getElementById("idPreview");
-
-    html2canvas(preview, { scale: 2 }).then(canvas => {
-        const imgData = canvas.toDataURL("image/png");
-        const imgWidth = 190; // Fit page width
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-        pdf.addImage(imgData, "PNG", 10, 10, imgWidth, imgHeight);
-        pdf.save("ID_Card.pdf");
+    requests.forEach((req, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${req.name}</td>
+            <td>${req.enrollment}</td>
+            <td>${req.department}</td>
+            <td>
+                <button class="approve" onclick="approveRequest(${index})">Approve</button>
+                <button class="reject" onclick="rejectRequest(${index})">Reject</button>
+            </td>
+        `;
+        tbody.appendChild(row);
     });
 }
