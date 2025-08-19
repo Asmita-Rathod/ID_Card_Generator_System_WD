@@ -1,5 +1,5 @@
 /* ------------------- */
-/* General Reset    */
+/* General Reset      */
 /* ------------------- */
 * {
     margin: 0;
@@ -9,8 +9,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: #171a2c;
-    color: #e0e2e8;
+    background-color: #ffffff; 
+    color: #333333; /* Dark gray for general text */
     line-height: 1.6;
 }
 
@@ -22,7 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #252940, #171a2c);
+    background: #f8f9fa; /* A slightly off-white background */
 }
 
 .auth-container {
@@ -32,22 +32,23 @@ body {
 }
 
 .auth-card {
-    background: #252940;
+    background: #ffffff;
     border-radius: 12px;
     padding: 30px 25px;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
     text-align: center;
+    border: 1px solid #e9ecef;
 }
 
 .auth-title {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #e0e2e8;
+    color: #1a1a1a; /* Bold black title */
 }
 
 .auth-subtitle {
     font-size: 0.9rem;
-    color: #b0b2c3;
+    color: #666;
     margin-bottom: 20px;
 }
 
@@ -60,25 +61,26 @@ label {
     font-size: 0.9rem;
     display: block;
     margin-bottom: 5px;
+    color: #444;
 }
 
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #3d415b;
-    background: #2d3142;
-    color: #e0e2e8;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    color: #333333;
     border-radius: 8px;
     outline: none;
     transition: 0.3s;
 }
 
 input:focus {
-    border-color: #4c7cff;
+    border-color: #004B6E; /* Dark teal-blue focus border */
 }
 
 .btn-primary {
-    background: #4c7cff;
+    background: #004B6E; /* Dark teal-blue primary button */
     color: white;
     border: none;
     padding: 10px;
@@ -89,7 +91,7 @@ input:focus {
 }
 
 .btn-primary:hover {
-    background: #3964d8;
+    background: #003a55; /* Darker teal-blue on hover */
 }
 
 .auth-links {
@@ -97,7 +99,7 @@ input:focus {
 }
 
 .auth-links a {
-    color: #8a63ff;
+    color: #004B6E; /* Dark teal-blue link color */
     text-decoration: none;
     font-size: 0.9rem;
 }
@@ -107,25 +109,25 @@ input:focus {
 }
 
 /* ------------------- */
-/* Modal Styles      */
+/* Modal Styles       */
 /* ------------------- */
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.5);
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background: #252940;
-    color: #e0e2e8;
+    background: #ffffff;
+    color: #333333;
     padding: 25px;
     border-radius: 10px;
     width: 350px;
     position: relative;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
 }
 
 .close-btn {
@@ -134,30 +136,30 @@ input:focus {
     right: 12px;
     font-size: 20px;
     cursor: pointer;
-    color: #b0b2c3;
+    color: #999;
 }
 
 .close-btn:hover {
-    color: #e0e2e8;
+    color: #333;
 }
 
 /* ------------------- */
-/* Navbar Styles       */
+/* Navbar Styles        */
 /* ------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #171a2c;
+    background: #ffffff;
     padding: 15px 30px;
-    color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: #1a1a1a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #8a63ff;
+    color: #004B6E; /* Dark teal-blue logo */
 }
 
 .navbar-links {
@@ -167,19 +169,19 @@ input:focus {
 }
 
 .navbar-links a {
-    color: white;
+    color: #333333;
     text-decoration: none;
     font-weight: 500;
 }
 
 .navbar-links a.active,
 .navbar-links a:hover {
-    color: #4c7cff;
+    color: #004B6E;
     text-decoration: underline;
 }
 
 .logout-btn {
-    background: #7f5af0;
+    background: #004B6E;
     color: white;
     padding: 8px 14px;
     border: none;
@@ -188,22 +190,22 @@ input:focus {
 }
 
 .logout-btn:hover {
-    background: #6c4af5;
+    background: #003a55;
 }
 
 /* ------------------- */
-/* Hero Section        */
+/* Hero Section         */
 /* ------------------- */
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background: #171a2c;
+    background: #f5f5f5;
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    color: #8a63ff; /* Purple for the main heading */
-    background: -webkit-linear-gradient(45deg, #8a63ff, #4c7cff);
+    color: #1a1a1a;
+    background: -webkit-linear-gradient(45deg, #004B6E, #00283b); /* Gradient with teal-blue shades */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 10px;
@@ -211,7 +213,7 @@ input:focus {
 
 .hero p {
     font-size: 1.1rem;
-    color: #b0b2c3;
+    color: #555;
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -226,14 +228,14 @@ input:focus {
 
 .search-container input {
     width: 70%;
-    border: 1px solid #4c7cff;
-    background: #2d3142;
-    color: #e0e2e8;
+    border: 1px solid #004B6E;
+    background: #f9f9f9;
+    color: #333333;
 }
 
 .search-container .btn-primary {
     width: 30%;
-    background: #4c7cff;
+    background: #004B6E;
 }
 
 .filter-container {
@@ -242,13 +244,13 @@ input:focus {
 }
 
 .filter-container label {
-    color: #b0b2c3;
+    color: #555;
 }
 
 .filter-container select {
-    background: #2d3142;
-    border: 1px solid #3d415b;
-    color: #e0e2e8;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    color: #333333;
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
@@ -266,28 +268,29 @@ input:focus {
 }
 
 .card {
-    background: #252940;
+    background: #ffffff;
     padding: 25px;
     width: 250px;
     text-align: center;
     border-radius: 12px;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
 }
 
 .card h3 {
-    color: #4c7cff;
+    color: #004B6E;
     margin-bottom: 10px;
 }
 
 .card p {
-    color: #e0e2e8;
+    color: #333333;
     font-size: 0.95rem;
 }
 
@@ -316,7 +319,6 @@ input:focus {
     }
 }
 /* Profile Page */
-/* Profile Page */
 .profile-section {
     max-width: 800px;
     margin: 40px auto;
@@ -327,16 +329,17 @@ input:focus {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #8a63ff, #4c7cff);
+    background: linear-gradient(90deg, #004B6E, #00283b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .profile-card {
-    background: #252940;
+    background: #ffffff;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
 }
 
 .profile-form .form-group {
@@ -347,7 +350,7 @@ input:focus {
     display: block;
     margin-bottom: 8px;
     font-size: 0.95rem;
-    color: #b0b2c3;
+    color: #444;
 }
 
 .profile-form input[type="text"],
@@ -355,24 +358,24 @@ input:focus {
 .profile-form input[type="file"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #4c7cff;
+    border: 1px solid #ccc;
     border-radius: 6px;
-    background: #171a2c;
-    color: #e0e2e8;
+    background: #f9f9f9;
+    color: #333333;
     font-size: 0.95rem;
     transition: 0.3s ease;
 }
 
 .profile-form input:focus {
     outline: none;
-    border-color: #8a63ff;
-    box-shadow: 0 0 8px rgba(138, 99, 255, 0.5);
+    border-color: #004B6E;
+    box-shadow: 0 0 8px rgba(0, 75, 110, 0.5);
 }
 
 .primary-btn {
     width: 100%;
     padding: 12px;
-    background: #4c7cff;
+    background: #004B6E;
     border: none;
     border-radius: 6px;
     font-size: 1rem;
@@ -383,9 +386,8 @@ input:focus {
 }
 
 .primary-btn:hover {
-    background: #365acb;
+    background: #003a55;
 }
-
 
 /* History Table Styling */
 .history-table {
@@ -398,30 +400,31 @@ input:focus {
 .history-table td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #eee;
 }
 
 .history-table th {
-    background: rgba(255,255,255,0.05);
+    background: #f5f5f5;
     font-weight: bold;
 }
 
 .status-approved {
-    color: #4CAF50;
+    color: #28a745; /* A standard green for approved status */
     font-weight: bold;
 }
 
 .status-pending {
-    color: #FFC107;
+    color: #ffc107; /* A standard yellow for pending status */
     font-weight: bold;
 }
 
 .history-card, .request-card {
-    background: rgba(255,255,255,0.05);
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     max-width: 900px;
     margin: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 /* ------------------- */
@@ -435,19 +438,20 @@ input:focus {
 }
 
 .form-card {
-    background: #252940;
+    background: #ffffff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 700px; /* wider than auth forms */
+    max-width: 700px;
+    border: 1px solid #ddd;
 }
 
 .form-title {
     font-size: 1.8rem;
     margin-bottom: 20px;
     text-align: center;
-    background: linear-gradient(90deg, #8a63ff, #4c7cff);
+    background: linear-gradient(90deg, #004B6E, #00283b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -460,7 +464,7 @@ input:focus {
     display: block;
     margin-bottom: 8px;
     font-size: 0.95rem;
-    color: #b0b2c3;
+    color: #444;
 }
 
 .form-group input,
@@ -468,10 +472,10 @@ input:focus {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #3d415b;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    background: #2d3142;
-    color: #e0e2e8;
+    background: #f9f9f9;
+    color: #333333;
     font-size: 0.95rem;
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
@@ -480,8 +484,8 @@ input:focus {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #8a63ff;
-    box-shadow: 0 0 8px rgba(138, 99, 255, 0.4);
+    border-color: #004B6E;
+    box-shadow: 0 0 8px rgba(0, 75, 110, 0.4);
 }
 
 textarea {
@@ -492,20 +496,20 @@ textarea {
 /* File input */
 .form-group input[type="file"] {
     padding: 6px;
-    background: #1c1f33;
-    border: 1px dashed #4c7cff;
+    background: #f0f0f5;
+    border: 1px dashed #004B6E;
     cursor: pointer;
 }
 
 .form-group input[type="file"]:hover {
-    border-color: #8a63ff;
+    border-color: #003a55;
 }
 
 /* Submit button */
 .btn-primary {
     width: 100%;
     padding: 12px;
-    background: #4c7cff;
+    background: #004B6E;
     border: none;
     border-radius: 8px;
     color: white;
@@ -516,11 +520,11 @@ textarea {
 }
 
 .btn-primary:hover {
-    background: #365acb;
+    background: #003a55;
 }
 
 .btn-approve {
-    background: #4CAF50;
+    background: #28a745;
     color: white;
     padding: 8px 14px;
     border: none;
@@ -528,11 +532,11 @@ textarea {
     cursor: pointer;
 }
 .btn-approve:hover {
-    background: #43a047;
+    background: #218838;
 }
 
 .btn-reject {
-    background: #E53935;
+    background: #dc3545;
     color: white;
     padding: 8px 14px;
     border: none;
@@ -540,5 +544,5 @@ textarea {
     cursor: pointer;
 }
 .btn-reject:hover {
-    background: #c62828;
+    background: #c82333;
 }
